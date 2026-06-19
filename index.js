@@ -256,7 +256,7 @@ app.post("/queues", async (req, res) => {
       FROM queues
       WHERE user_id = $1
       AND service_id = $2
-      AND status NOT IN ('DONE', 'REJECTED')
+      AND status NOT IN ('Selesai', 'Ditolak')
       `,
       [userId, serviceId],
     );
