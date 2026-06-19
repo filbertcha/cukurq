@@ -122,52 +122,52 @@ Pemisahan ini membuat kode lebih:
 
 ---
 
-### Queue Registration/Login Page
+### Registration/Login Page
 
-![Queue Registration](./screenshots/register.png)
-![Queue login](./screenshots/login.png)
+![Registration](./screenshot/register.png)
+![login](./screenshot/login.png)
 
 ---
 
 ### Customer Dashboard
 
-![Customer Dashboard](./screenshots/dash-customer.png)
+![Customer Dashboard](./screenshot/dash-customer.png)
 
 ---
 
 ### Queuing
 
-![Queueing](./screenshots/antri.png)
+![Queueing](./screenshot/antri.png)
 
 ---
 
 ### Queuing History
 
-![Queueing](./screenshots/riwayat-antri.png)
+![Queueing History](./screenshot/riwayat-antri.png)
 
 ---
 
 ### Profile
 
-![Queueing](./screenshots/edit-profile.png)
+![Profile](./screenshot/edit-profile.png)
 
 ---
 
 ### Barber Dashboard
 
-![Queue Management](./screenshots/dash-admin.png)
+![Barber Dashboard](./screenshot/dash-admin.png)
 
 ---
 
 ### Manage Services
 
-![Queue Management](./screenshots/kelola-layanan.png)
+![Manage Services](./screenshot/kelola-layanan.png)
 
 ---
 
 ### Manage Roles
 
-![Queue Management](./screenshots/kelola-role.png)
+![Manage Roles](./screenshot/kelola-role.png)
 
 ---
 
