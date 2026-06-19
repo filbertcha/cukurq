@@ -116,9 +116,9 @@ Pemisahan ini membuat kode lebih:
 
 ### Landing Page
 
-![Landing Page](./screenshots/landing-page-1.png)
-![Landing Page](./screenshots/landing-page-2.png)
-![Landing Page](./screenshots/landing-page-3.png)
+![Landing Page](./Screenshots/landing-page-1.png)
+![Landing Page](./Screenshots/landing-page-2.png)
+![Landing Page](./Screenshots/landing-page-3.png)
 
 ---
 
