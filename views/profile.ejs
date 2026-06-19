@@ -1,0 +1,96 @@
+<%- include('partials/header') %>
+<% if (locals.profile) { %>
+  <% if (profile.role === "customer") {%>
+    <div class="navbar">
+      <div class="nav">
+        <div class="nav1">
+          <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+          <a href="/">Beranda</a>
+          <a href="/riwayatAntrian">Riwayat Antrian</a>
+          <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  <% } else if (profile.role === "admin") {%>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/admin">Beranda</a>
+            <a href="/admin/services">Kelola Layanan</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+  <% } else if (profile.role === "super admin") {%>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/admin">Beranda</a>
+            <a href="/admin/services">Kelola Layanan</a>
+            <a href="/role">Kelola Role</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+  <% } %>
+<% } %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="kotak-profile">
+    <h1>Profile</h1>
+    <% if (locals.profile) { %>
+        <form method="POST" action="/profile/<%= profile.id %>">
+            <label>Nama:</label>
+            <input
+                type="text"
+                name="nama"
+                value="<%= profile.name %>"
+            >
+
+            <label>Nomor HP:</label>
+            <input
+                type="text"
+                name="nohp"
+                value="<%= profile.nomor_hp %>"
+            >
+
+            <label>Password Baru:</label>
+            <input
+                type="password"
+                name="password"
+            >
+
+            <button type="submit">
+                Simpan
+            </button>
+    </form>
+    <% } else {%>
+        <h1>Data Error</h1>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,133 @@
+<%- include('partials/header') %>
+
+<% if (locals.profile) { %>
+  <% if (profile.role === "super admin") {%>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/admin">Beranda</a>
+            <a href="/admin/services">Kelola Layanan</a>
+            <a href="/role">Kelola Role</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+  <% } else {%>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/admin">Beranda</a>
+            <a href="/admin/services">Kelola Layanan</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+  <% } %>
+<% } %>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="kotak-admin">
+
+    <h1>Dashboard Admin</h1>
+
+    <table border="1">
+        <tr>
+            <th>No. Antrian</th>
+            <th>Customer</th>
+            <th>No HP</th>
+            <th>Layanan</th>
+            <th>Waktu Pemesanan</th>
+            <th>Status</th>
+            <th>WA</th>
+            <th>Aksi</th>
+        </tr>
+
+        <% if (locals.queues) { %>
+            <% queues.forEach(queue => { %>
+                <tr>
+                    <td>
+                        <%= queue.queue_number %>
+                    </td>
+                    <td>
+                        <%= queue.customer_name %>
+                    </td>
+                    <td>
+                        <%= queue.nomor_hp %>
+                    </td>
+                    <td>
+                        <%= queue.service_name %>
+                    </td>
+                    <td>
+                        <%= queue.queue_date %>
+                    </td>
+                    <td>
+                        <%= queue.status %>
+                    </td>
+
+                    <td>
+                        <a
+                        target="_blank"
+                        href="https://wa.me/62<%= queue.nomor_hp.substring(1) %>?text=Halo%20<%= queue.customer_name %>,%20antrian%20nomor%20<%= queue.queue_number %>%20sedang%20diproses."
+                        >
+                            Kirim WA
+                        </a>
+
+                    </td>
+
+                    <td>
+                        <form
+                        action="/admin/queue/<%= queue.id %>/status"
+                        method="POST"
+                        >
+                            <button
+                            class="diproses"
+                            name="status"
+                            value="Diproses"
+                            >
+                                Diproses
+                            </button>
+                            <button
+                            class="selesai"
+                            name="status"
+                            value="Selesai"
+                            >
+                                Selesai
+                            </button>
+                            <button
+                            class="ditolak"
+                            name="status"
+                            value="Ditolak"
+                            >
+                                Ditolak
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+
+            <% }) %>
+        <% } %>
+
+    </table>
+
+</div>
+
+<%- include('partials/footer') %>

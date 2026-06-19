@@ -1,0 +1,160 @@
+<%- include('partials/header') %>
+
+<% if (locals.profile) { %>
+  <% if (profile.role === "super admin") {%>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/admin">Beranda</a>
+            <a href="/admin/services">Kelola Layanan</a>
+            <a href="/role">Kelola Role</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+  <% } else {%>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/admin">Beranda</a>
+            <a href="/admin/services">Kelola Layanan</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+  <% } %>
+<% } %>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="kotak-admin-service">
+    <h2>Tambah Layanan</h2>
+
+    <form method="POST" action="/admin/services">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Nama layanan"
+            required
+        >
+
+        <input
+            type="number"
+            name="duration_minutes"
+            placeholder="Durasi (menit)"
+            required
+        >
+
+        <input
+            type="number"
+            name="price"
+            placeholder="Harga"
+            required
+        >
+
+        <button type="submit">
+            Tambah
+        </button>
+
+    </form>
+
+    <h2>Daftar Layanan</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Nama</th>
+            <th>Durasi</th>
+            <th>Harga</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+
+        <% services.forEach(service => { %>
+
+            <tr>
+
+                <td><%= service.name %></td>
+
+                <td><%= service.duration_minutes %> menit</td>
+
+                <td>Rp <%= service.price %></td>
+
+                <td>
+                    <%= service.is_active %>
+                </td>
+
+                <td>
+
+                    <form
+                    method="POST"
+                    action="/admin/services/<%= service.id %>/update"
+                    class="update"
+                    >
+
+                        <input
+                        type="number"
+                        name="duration_minutes"
+                        value="<%= service.duration_minutes %>"
+                        >
+
+                        <input
+                        type="number"
+                        name="price"
+                        value="<%= service.price %>"
+                        >
+
+                        <button type="submit">
+                            Update
+                        </button>
+
+                    </form>
+
+                    <form
+                    method="POST"
+                    action="/admin/services/<%= service.id %>/toggle"
+                    class="aktivasi"
+                    >
+
+                        <button type="submit">
+
+                            <% if(service.is_active === "ya") { %>
+                                Nonaktifkan
+                            <% } else { %>
+                                Aktifkan
+                            <% } %>
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+
+        <% }) %>
+
+    </table>
+    
+</div>
+
+<%- include('partials/footer') %>

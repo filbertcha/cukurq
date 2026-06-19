@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<div class="kotak-login">
+  <a href="javascript:void(0)" onclick="history.back()" class="back">Kembali</a>
+  <div class="form-login">
+    <form action="/api/login" method="post">
+      <div class="form-group">
+        <label for="nohp">Nomor Handphone: </label>
+        <input type="nohp" class="form-nohp" name="nohp" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" class="form-pw" name="password" />
+      </div>
+      <button type="submit" class="button">Login</button>
+      <div class="register">
+        <p>Belum punya akun?</p>
+        <a href="/register">Silakan Register</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

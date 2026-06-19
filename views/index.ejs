@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/">Beranda</a>
+            <a href="/#product">Jenis Layanan</a>
+            <a href="/#profile">Profile Barber</a>
+        </div>
+        <div class="nav3">
+            <a href="/login">Pesan Sekarang</a>
+        </div>
+        </div>
+    </div>
+    <div class="main" id="main">
+      <div class="deskripsi">
+        <h2>Platform Jasa Cukur Di Kota Malang</h2>
+        <a href="/login">Pesan Sekarang</a>
+      </div>
+      <div class="gambar">
+        <img src="mainpic.jpg" alt="Italian Trulli">
+      </div>
+    </div>
+    <div class="bgProduct">
+      <div class="product" id="product">
+        <% if (locals.listServices) {%>
+          <% for(let service of listServices) {%>
+            <div class="item">
+              <h2><%= service.name %></h2>
+              <div class="deskripsi">
+                <p><%= service.duration_minutes %> Menit</p>
+                <p>RP. <%= service.price %></p>
+              </div>
+            </div>
+          <% } %>
+        <% } else {%>
+        <h1>Layanan masih belum tersedia</h1>
+        <% } %>
+    </div>
+    </div>
+    
+    <div class="profile" id="profile">
+      <h2>Profile Barber</h2>
+      <div class="cardBg">
+        <% if (locals.listBarberman) {%>
+          <% for(let barberman of listBarberman) {%>
+            <div class="cardProfile">
+              <h2><%= barberman.name %></h2>
+            </div>
+          <% } %>
+        <% } else {%>
+        <h1>Layanan masih belum tersedia</h1>
+        <% } %>
+      </div>
+    </div>
+    <div class="contact" id="contact">
+      <div class="contactBg">
+        <h2>CukurQ</h2>
+        <img src="lokasi.svg" alt="lokasi" />
+        <h3>Malang</h3>
+        <p>Jl. Mayjend Panjaitan Block A-II/20</p>
+      </div>
+    </div>
+<%- include('partials/footer') %>

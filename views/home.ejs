@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/">Beranda</a>
+            <a href="/riwayatAntrian">Riwayat Antrian</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="judul-home">
+        <h1>Home</h1>
+    </div>
+    <% if (locals.services) {%>
+        <% for(let service of services) {%>
+            <div class="item-home">
+                <h2><%= service.name %></h2>
+                <div class="deskripsi">
+                    <p><%= service.duration_minutes %> Menit</p>
+                    <p>RP. <%= service.price %></p>
+                    <p>Antrian: <%= service.queues %></p>
+                    <p>Estimasi Waktu: <%= service.duration_minutes * service.queues %> Menit</p>
+                    <form action="/mengantri/<%= service.id %>" method="post">
+                        <button type="submit">Ambil Antrian</button>
+                    </form>
+                </div>
+            </div>
+            <hr />
+        <% } %>
+    <% } else {%>
+    <h1>Layanan masih belum tersedia</h1>
+    <% } %>
+<%- include('partials/footer') %>

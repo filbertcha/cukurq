@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+    <div class="navbar">
+        <div class="nav">
+        <div class="nav1">
+            <h2>CukurQ</h2>
+        </div>
+        <div class="nav2">
+            <a href="/">Beranda</a>
+            <a href="/riwayatAntrian">Riwayat Antrian</a>
+            <a href="/profile">Profile</a>
+        </div>
+        <div class="nav3">
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="bgRA">
+        <div class="RA" id="RA">
+            <% if (riwayatAntrian.length > 0) {%>
+            <% for(let antrian of riwayatAntrian) {%>
+                <div class="item">
+                    <h2><%= antrian.service_name %></h2>
+                    <p><%= antrian.queue_number %></p>
+                    <p><%= antrian.status %></p>
+                    <p><%= antrian.queue_date %></p>
+                </div>
+                <hr />
+            <% } %>
+            <% } else {%>
+                <div class="antrianKosong">
+                    <h1>Antrian Kosong</h1>
+                </div>
+            <% } %>
+        </div>
+    </div>
+<%- include('partials/footer') %>

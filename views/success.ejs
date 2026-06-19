@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="hasilAntrian">
+    <h1>Pemesanan Berhasil</h1>
+
+    <% if (locals.no_antrian) {%>
+        <div class="item">
+            <h2>Antrian berhasil dibuat</h2>
+            <p>Berikut nomor antrian anda: <%= no_antrian %></p>
+        </div>
+    <% } else {%>
+        <h1>Antrian belum berhasil dibuat silakan coba lagi atau hubungi kontak kami.</h1>
+    <% } %>
+
+    <a href="javascript:void(0)" onclick="history.back()">Back</a>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,813 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10%;
+  align-items: center;
+  /* border: 1px black solid; */
+}
+
+.nav1 {
+  color: #169dd0;
+  font-size: 22px;
+  font-family: "Sono", monospace;
+  font-weight: 800;
+  /* border: 1px black solid; */
+}
+
+.nav2 {
+  display: flex;
+  gap: 30px;
+  /* border: 1px black solid; */
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 16px;
+}
+
+.nav2 a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 10px;
+  border-radius: 8px;
+}
+
+.nav2 a:hover {
+  background-color: rgb(246, 245, 245);
+}
+
+.nav3 {
+  display: flex;
+  /* border: 1px black solid; */
+  margin: 0 10px;
+  padding: 0 10px;
+}
+
+.nav3 a {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+}
+
+.nav3 a:hover {
+  background-color: #28b4e8;
+}
+
+.main {
+  padding-top: 200px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin: 0 10%;
+}
+
+.main .deskripsi {
+  display: flex;
+  flex-direction: column;
+}
+
+.main .deskripsi h2 {
+  font-weight: 800;
+  font-family: "Sono", monospace;
+  font-size: 60px;
+}
+
+.main .deskripsi a {
+  margin-top: 20px;
+  font-weight: 500;
+  width: 200px;
+  text-align: center;
+  font-family: "Sono", monospace;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+}
+.main .deskripsi a:hover {
+  background-color: #28b4e8;
+}
+
+.main .gambar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .gambar img {
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.main .gambar img:hover {
+  transform: scale(1.1);
+}
+
+.bgProduct {
+  background-color: rgb(246, 245, 245);
+  /* border: 1px black solid; */
+}
+
+.product {
+  margin: 100px 10% 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 300px;
+  gap: 10px;
+  /* border: 1px black solid; */
+}
+
+.product .item {
+  background-color: white;
+  margin: 30px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.05);
+  /* border: 1px black solid; */
+}
+
+.product .item h2 {
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-family: "Sono", monospace;
+  font-size: 28px;
+  color: #169dd0;
+}
+
+.product .item .deskripsi {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 18px;
+}
+
+.profile {
+  margin: 50px 10%;
+}
+
+.profile h2 {
+  font-weight: 800;
+  font-family: "Sono", monospace;
+  font-size: 34px;
+  color: #000;
+}
+
+.profile .cardBg {
+  display: grid;
+  grid-auto-rows: 70px;
+  /* border: 1px black solid; */
+}
+
+.profile .cardBg .cardProfile {
+  border: 1px #169dd0 solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  margin-top: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.profile .cardBg .cardProfile:hover {
+  transform: scale(1.02);
+}
+
+.profile .cardBg .cardProfile h2 {
+  font-weight: 800;
+  font-family: "Sono", monospace;
+  font-size: 28px;
+  color: #169dd0;
+}
+
+.contact {
+  background-color: rgb(246, 245, 245);
+}
+
+.contactBg {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin: 0 10%;
+  padding: 20px 0;
+}
+
+.contact h2 {
+  grid-column: span 2;
+  font-weight: 800;
+  font-family: "Sono", monospace;
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 7px;
+}
+
+.contact img {
+  width: 20px;
+  margin-right: 2px;
+}
+
+.contact h3 {
+  font-weight: 800;
+  font-family: "Sono", monospace;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.contact p {
+  grid-column: span 2;
+  font-weight: 400;
+  font-family: "Sono", monospace;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.kotak-login {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.kotak-login .back {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  width: 100px;
+  margin: 20px 0 10px 20px;
+}
+
+.kotak-login .back:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-login .form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.kotak-login .form-login .form-group label {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+}
+
+.kotak-login .form-login .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+  outline: none;
+}
+
+.kotak-login .form-login button {
+  width: 100%;
+  padding: 14px;
+  background-color: #169dd0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.kotak-login .form-login button:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-login .form-login .register p {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 14px;
+  margin-bottom: 18px;
+  /* border: #000 1px solid; */
+}
+
+.kotak-login .form-login .register a {
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  color: white;
+  font-weight: bold;
+}
+
+.kotak-login .form-login .register a:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-register {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.kotak-register .back {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  width: 100px;
+  margin: 20px 0 10px 20px;
+}
+
+.kotak-register .back:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-register .form-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.kotak-register .form-register .form-group label {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+}
+
+.kotak-register .form-register .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+  outline: none;
+}
+
+.kotak-register .form-register button {
+  width: 100%;
+  padding: 14px;
+  background-color: #169dd0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.kotak-register .form-register button:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-register .form-register .login p {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 14px;
+  margin-bottom: 18px;
+  /* border: #000 1px solid; */
+}
+
+.kotak-register .form-register .login a {
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  color: white;
+  font-weight: bold;
+}
+
+.kotak-login .form-login .register a:hover {
+  background-color: #28b4e8;
+}
+
+.judul-home {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 18px;
+  margin: 0 10% 0 10%;
+}
+
+.item-home {
+  margin: 100px 10% 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 300px;
+  gap: 10px;
+  /* border: 1px black solid; */
+}
+
+.item-home h2 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+}
+
+.item-home .deskripsi p {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+}
+
+.item-home .deskripsi form button {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  margin-top: 10px;
+}
+
+.item-home .deskripsi form button:hover {
+  background-color: #28b4e8;
+}
+
+.bgRA .RA .antrianKosong h1 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 26px;
+  margin: 0 10% 0 10%;
+}
+
+.bgRA .RA .item {
+  margin: 0 10% 20px 10%;
+}
+
+.bgRA .RA .item h2 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 24px;
+}
+
+.bgRA .RA p {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+}
+
+.hasilAntrian {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hasilAntrian h1 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 30px;
+  margin-bottom: 26px;
+}
+
+.hasilAntrian h2 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 22px;
+}
+
+.hasilAntrian p {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.hasilAntrian a {
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  color: white;
+  font-weight: bold;
+}
+
+.hasilAntrian a:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-profile > h1 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 30px;
+  margin: 0 10% 12px 10%;
+}
+
+.kotak-profile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.kotak-profile label {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+  margin: 0 10% 12px 10%;
+}
+
+.kotak-profile input {
+  padding: 12px 16px;
+  margin: 0 10% 12px 10%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.kotak-profile button {
+  margin: 0 10% 12px 10%;
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  background-color: #169dd0;
+  margin-top: 10px;
+}
+
+.kotak-profile button:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-admin h1 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 30px;
+  margin: 0 10% 12px 10%;
+}
+
+.kotak-admin table {
+  margin: 0 10% 0 10%;
+}
+
+.kotak-admin tr th {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+  padding: 5px 5px;
+}
+
+.kotak-admin tr td {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 16px;
+  padding: 20px 10px;
+}
+
+.kotak-admin tr td a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #139813;
+  color: white;
+  font-weight: 500;
+  border: 3px solid #000;
+}
+
+.kotak-admin tr td a:hover {
+  background-color: #1ac71a;
+}
+
+.kotak-admin tr td form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.kotak-admin tr td form button {
+  font-size: 16px;
+}
+
+.kotak-admin tr td form button.diproses {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #c2c215;
+  color: white;
+  font-weight: bold;
+}
+.kotak-admin tr td form button.diproses:hover {
+  background-color: #e4e417;
+}
+
+.kotak-admin tr td form button.selesai {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #139813;
+  color: white;
+  font-weight: bold;
+}
+.kotak-admin tr td form button.selesai:hover {
+  background-color: #1ac71a;
+}
+
+.kotak-admin tr td form button.ditolak {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #c21515;
+  color: white;
+  font-weight: bold;
+}
+.kotak-admin tr td form button.ditolak:hover {
+  background-color: #e41717;
+}
+
+.kotak-admin-service h2 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 30px;
+  margin: 0 10% 12px 10%;
+}
+
+.kotak-admin-service > form {
+  margin: 0 10% 0 10%;
+}
+
+.kotak-admin-service > form > input {
+  padding: 12px 16px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.kotak-admin-service > form > button {
+  padding: 14px;
+  background-color: #139813;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.kotak-admin-service > form > button:hover {
+  background-color: #1ac71a;
+}
+
+.kotak-admin-service table {
+  margin: 0 10% 30px 10%;
+}
+
+.kotak-admin-service table tr th {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+  padding: 5px 5px;
+}
+
+.kotak-admin-service table tr td {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 16px;
+  padding: 20px 10px;
+}
+
+.kotak-admin-service table tr td .update input {
+  padding: 12px 16px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.kotak-admin-service table tr td .update button {
+  padding: 14px;
+  background-color: #139813;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.kotak-admin-service table tr td .update button:hover {
+  background-color: #1ac71a;
+}
+
+.kotak-admin-service table tr td .aktivasi button {
+  padding: 14px;
+  background-color: #169dd0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.kotak-admin-service table tr td .aktivasi button:hover {
+  background-color: #28b4e8;
+}
+
+.kotak-role h1 {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 30px;
+  margin: 0 10% 12px 10%;
+}
+
+.kotak-role table {
+  margin: 0 10% 30px 10%;
+  width: 50%;
+}
+
+.kotak-role table tr th {
+  font-weight: bold;
+  font-family: "Sono", monospace;
+  font-size: 20px;
+  padding: 5px 5px;
+}
+
+.kotak-role table tr td {
+  font-weight: 500;
+  font-family: "Sono", monospace;
+  font-size: 16px;
+  padding: 20px 10px;
+}
+
+.kotak-role table tr td form select {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 140px;
+  transition: all 0.2s ease;
+}
+
+.kotak-role table tr td form select:hover {
+  border-color: #666;
+}
+
+.kotak-role table tr td form button {
+  padding: 14px;
+  background-color: #169dd0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.kotak-role table tr td form button:hover {
+  background-color: #28b4e8;
+}

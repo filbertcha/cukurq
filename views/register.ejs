@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<div class="kotak-register">
+  <a href="javascript:void(0)" onclick="history.back()" class="back">Kembali</a>
+  <div class="form-register">
+    <form action="/api/register" method="post">
+      <div class="form-group">
+        <label for="nama">Nama</label>
+        <input type="nama" class="form-nama" name="nama" />
+      </div>
+      <div class="form-group">
+        <label for="nohp">Nomor Handphone</label>
+        <input type="nohp" class="form-nohp" name="nohp" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-pw" name="password" />
+      </div>
+      <div class="form-group">
+        <label for="password2">Konfirmasi Password</label>
+        <input type="password" class="form-pw" name="password2" />
+      </div>
+      <button type="submit" class="button">Register</button>
+      <div class="login">
+        <p>Sudah punya akun?</p>
+        <a href="/login">Silakan Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
